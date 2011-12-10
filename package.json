@@ -1,0 +1,17 @@
+{
+  "author": "James Richard <james@james-richard.com>",
+  "name": "geckoboard-node",
+  "description": "Node.js middleware for creating Geckoboard widgets.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Cev/geckoboard-node",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Cev/geckoboard-node.git"
+  },
+  "main": "./index",
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+  }
+}
