@@ -20,14 +20,14 @@ Create a GeckoBoard client and pass in an express instance:
 and then define request handlers with `request`. Call the `respond` function with `error, data` to render your response to the API:
 
     GeckoBoard.request("live-users", function(respond) {
-            res = {item: [{
-                        text: "",
-                        "value" : 123
-                    }, {
-                        text: "",
-                        value: 238
-                    }]
-            };
+        res = {item: [{
+                    text: "",
+                    "value" : 123
+                }, {
+                    text: "",
+                    value: 238
+                }]
+        };
 
         respond(null, res);
     });
