@@ -1,7 +1,15 @@
 This module makes it slightly easier to define api widgets for geckoboard
 
+Install
+=======
 
-Try this:
+    npm install geckoboard
+
+Basic Usage
+===========
+
+Create a GeckoBoard client and pass in an express instance:
+
 
     GeckoBoard = GeckoBoard.createClient({
         server: app,
@@ -9,8 +17,9 @@ Try this:
         key: 'asdf123'
     });
 
-and then 
-    GeckoBoard.request("live-users", function() {
+and then define request handlers with `request`. Call the `respond` function with `error, data` to render your response to the API:
+
+    GeckoBoard.request("live-users", function(respond) {
             res = {item: [{
                         text: "",
                         "value" : 123
@@ -20,5 +29,5 @@ and then
                     }]
             };
 
-        return res;
+        respond(null, res);
     });
