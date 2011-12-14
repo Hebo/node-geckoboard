@@ -2,7 +2,7 @@
   "author": "James Richard <james@james-richard.com>",
   "name": "geckoboard",
   "description": "Node.js wrapper for creating Geckoboard widgets.",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "homepage": "https://github.com/Cev/node-geckoboard",
   "repository": {
     "type": "git",
