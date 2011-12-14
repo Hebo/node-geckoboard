@@ -1,4 +1,4 @@
-This module makes it slightly easier to define api widgets for geckoboard
+This module makes it slightly easier to define API widgets for geckoboard
 
 Install
 =======
@@ -8,10 +8,12 @@ Install
 Basic Usage
 ===========
 
-Create a GeckoBoard client and pass in an express instance:
+Create a GeckoBoard client and pass in an [express](http://expressjs.com/) instance:
 
+    var app        = require('express').createServer(),
+        GeckoBoard = require('geckoboard');
 
-    GeckoBoard = GeckoBoard.createClient({
+    gecko = GeckoBoard.createClient({
         server: app,
         path: '/widget',
         key: 'asdf123'
@@ -19,7 +21,7 @@ Create a GeckoBoard client and pass in an express instance:
 
 and then define request handlers with `request`. Call the `respond` function with `error, data` to render your response to the API:
 
-    GeckoBoard.request("live-users", function(respond) {
+    gecko.request("live-users", function(respond) {
         res = {item: [{
                     text: "",
                     "value" : 123
@@ -31,3 +33,17 @@ and then define request handlers with `request`. Call the `respond` function wit
 
         respond(null, res);
     });
+
+    app.listen(3000, function() {
+        console.log('Listening on port 3000');
+    });
+
+Cool, now check out your api at `localhost:3000/widget/live-users`.
+
+Check out the examples folder for more info.
+
+
+API Keys
+--------
+
+If you set an API key, the server will use HTTP basic auth. Your key goes in the username field.
